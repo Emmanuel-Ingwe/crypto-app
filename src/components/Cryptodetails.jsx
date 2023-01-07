@@ -1,7 +1,7 @@
 import React from "react";
 
-const Homepage = () => {
-	return <div>Homepage</div>;
+const Cryptodetails = () => {
+	return <div>Cryptodetails</div>;
 };
 
-export default Homepage;
+export default Cryptodetails;
