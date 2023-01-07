@@ -2,6 +2,8 @@ import React from 'react';
 import { Routes, Route, Link } from "react-router-dom";
 import { Layout, Typography, Space } from "antd";
 
+import Navbar from './components/Navbar';
+
 const App = () => {
     return (
         <div className="app">
@@ -9,6 +11,9 @@ const App = () => {
 
             </div>
             <div className="main">
+
+            </div>
+            <div className="footer">
 
             </div>
             {/* <Routes>
