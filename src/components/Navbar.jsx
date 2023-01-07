@@ -13,17 +13,13 @@ const Navbar = () => {
 	return (
 		<div className='nav-container'>
 			<div className='logo-container'>
-				<Avatar src={icon} size='large' />
+				<Avatar size='large' />
 				<Typography.Title level={2} className='logo'>
 					<Link to='/'>Cryptoverse</Link>
 				</Typography.Title>
-				<Button
-					className='menu-control-container'
-					onClick={() => setActiveMenu(!activeMenu)}>
-					<MenuOutlined />
-				</Button>
+				{/* s */}
 			</div>
-			{activeMenu && (
+			{/* {activeMenu && (
 				<Menu theme='dark'>
 					<Menu.Item icon={<HomeOutlined />}>
 						<Link to='/'>Home</Link>
@@ -38,7 +34,7 @@ const Navbar = () => {
 						<Link to='/news'>News</Link>
 					</Menu.Item>
 				</Menu>
-			)}
+			)} */}
 		</div>
 	);
 };
