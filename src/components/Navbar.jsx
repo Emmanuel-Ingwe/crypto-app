@@ -9,15 +9,20 @@ import {
 	MenuOutlined,
 } from "@ant-design/icons";
 
+import icon from "../images/cryptocurrency.png";
+
 const Navbar = () => {
+	// const [activeMenu, setActiveMenu] = useState(true);
+	// const [screenSize, setScreenSize] = useState(undefined);
+
 	return (
 		<div className='nav-container'>
 			<div className='logo-container'>
-				<Avatar size='large' />
+				<Avatar src={icon} size='large' />
 				<Typography.Title level={2} className='logo'>
 					<Link to='/'>Cryptoverse</Link>
 				</Typography.Title>
-				{/* s */}
+				s
 			</div>
 			{/* {activeMenu && ( */}
 			<Menu theme='dark'>
@@ -34,7 +39,7 @@ const Navbar = () => {
 					<Link to='/news'>News</Link>
 				</Menu.Item>
 			</Menu>
-			{/* // )} */}
+			{/* )} */}
 		</div>
 	);
 };
