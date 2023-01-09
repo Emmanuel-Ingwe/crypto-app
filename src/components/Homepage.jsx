@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import millify from "millify";
 import { Typography, Row, Col, Statistic } from "antd";
 import { Link } from "react-router-dom";
@@ -11,10 +11,18 @@ import { useGetCryptosQuery } from "../services/cryptoApi";
 const { Title } = Typography;
 
 const Homepage = () => {
-	const { data, isFetching } = useGetCryptosQuery(10);
+	const { data, isFetching, isError, error } = useGetCryptosQuery(10);
+
+	useEffect(() => {
+		try {
+			if (isError) console.log(error);
+			console.log("data", data);
+		} catch (error) {}
+	}, [isError, error, data]);
+
 	const globalStats = data?.data?.stats;
 
-	if (isFetching) return "loading...";
+	if (isFetching) return "Loading...";
 
 	return (
 		<>
@@ -23,33 +31,39 @@ const Homepage = () => {
 			</Title>
 			<Row gutter={[32, 32]}>
 				<Col span={12}>
-					<Statistic title='Total Cryptocurrencies' value={globalStats.total} />
+					<Statistic
+						title='Total Cryptocurrencies'
+						value={globalStats?.total ?? 0}
+					/>
 				</Col>
 				<Col span={12}>
 					<Statistic
 						title='Total Exchanges'
-						value={millify(globalStats.totalExchanges)}
+						value={millify(globalStats?.totalExchanges ?? 0)}
 					/>
 				</Col>
 				<Col span={12}>
 					<Statistic
 						title='Total Market Cap:'
-						value={`$${millify(globalStats.totalMarketCap)}`}
+						value={`$${millify(globalStats?.totalMarketCap ?? 0)}`}
 					/>
 				</Col>
 				<Col span={12}>
 					<Statistic
 						title='Total 24h Volume'
-						value={`$${millify(globalStats.total24hVolume)}`}
+						value={`$${millify(globalStats?.total24hVolume ?? 0)}`}
 					/>
 				</Col>
 				<Col span={12}>
-					<Statistic title='Total Cryptocurrencies' value={globalStats.total} />
+					<Statistic
+						title='Total Cryptocurrencies'
+						value={globalStats?.total ?? 0}
+					/>
 				</Col>
 				<Col span={12}>
 					<Statistic
 						title='Total Markets'
-						value={millify(globalStats.totalMarkets)}
+						value={millify(globalStats?.totalMarkets ?? 0)}
 					/>
 				</Col>
 			</Row>
