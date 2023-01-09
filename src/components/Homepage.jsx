@@ -4,8 +4,8 @@ import { Typography, Row, Col, Statistic } from "antd";
 import { Link } from "react-router-dom";
 
 import { useGetCryptosQuery } from "../services/cryptoApi";
-// import Cryptocurrencies from "./Cryptocurrencies";
-// import News from "./News";
+import Cryptocurrencies from "./Cryptocurrencies";
+import News from "./News";
 // import Loader from "./Loader";
 
 const { Title } = Typography;
@@ -61,7 +61,7 @@ const Homepage = () => {
 					/>
 				</Col>
 			</Row>
-			{/* <div className='home-heading-container'>
+			<div className='home-heading-container'>
 				<Title level={2} className='home-title'>
 					Top 10 Cryptos In The World
 				</Title>
@@ -78,7 +78,7 @@ const Homepage = () => {
 					<Link to='/news'>Show more</Link>
 				</Title>
 			</div>
-			<News simplified /> */}
+			<News simplified />
 		</>
 	);
 };
