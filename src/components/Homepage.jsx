@@ -33,37 +33,31 @@ const Homepage = () => {
 				<Col span={12}>
 					<Statistic
 						title='Total Cryptocurrencies'
-						value={globalStats?.total ?? 0}
+						value={globalStats?.total ?? "12,155"}
 					/>
 				</Col>
 				<Col span={12}>
 					<Statistic
 						title='Total Exchanges'
-						value={millify(globalStats?.totalExchanges ?? 0)}
+						value={millify(globalStats?.totalExchanges ?? "2.3T")}
 					/>
 				</Col>
 				<Col span={12}>
 					<Statistic
 						title='Total Market Cap:'
-						value={`$${millify(globalStats?.totalMarketCap ?? 0)}`}
+						value={`$${millify(globalStats?.totalMarketCap ?? "79.8K")}`}
 					/>
 				</Col>
 				<Col span={12}>
 					<Statistic
 						title='Total 24h Volume'
-						value={`$${millify(globalStats?.total24hVolume ?? 0)}`}
-					/>
-				</Col>
-				<Col span={12}>
-					<Statistic
-						title='Total Cryptocurrencies'
-						value={globalStats?.total ?? 0}
+						value={`$${millify(globalStats?.total24hVolume ?? 373)}`}
 					/>
 				</Col>
 				<Col span={12}>
 					<Statistic
 						title='Total Markets'
-						value={millify(globalStats?.totalMarkets ?? 0)}
+						value={millify(globalStats?.totalMarkets ?? "125.7B")}
 					/>
 				</Col>
 			</Row>
