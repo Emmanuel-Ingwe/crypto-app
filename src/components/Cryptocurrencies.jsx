@@ -11,6 +11,13 @@ const Cryptocurrencies = ({ simplified }) => {
 	const [cryptos, setCryptos] = useState(cryptosList?.data?.coins);
 	const [searchTerm, setSearchTerm] = useState("");
 
+	useEffect(() => {
+		const filteredData = cryptosList?.data?.coins.filter((coin) =>
+			coin.name.toLowerCase().includes(searchTerm.toLowerCase())
+		);
+		setCryptos(filteredData);
+	}, [cryptosList, searchTerm]);
+
 	console.log(cryptos);
 	if (isFetching) return "Loading...";
 
