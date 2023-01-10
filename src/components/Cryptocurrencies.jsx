@@ -15,25 +15,28 @@ const Cryptocurrencies = ({ simplified }) => {
 		const filteredData = cryptosList?.data?.coins.filter((coin) =>
 			coin.name.toLowerCase().includes(searchTerm.toLowerCase())
 		);
-		setCryptos(filteredData);
+		setTimeout(() => {
+			setCryptos(filteredData); // count is 0 here
+		}, 3000);
 	}, [cryptosList, searchTerm]);
 
 	console.log(cryptos);
 	if (isFetching) return "Loading...";
 
-	return (
-		<>
-			{!simplified && (
-				<div className='search-crypto'>
-					<input
-						placeholder='Search Cryptocurrency'
-						onChange={(e) => setSearchTerm(e.target.value)}
-					/>
-				</div>
-			)}
-			<Row gutters={[32, 32]} className='crypto-card-container'>
-				Loading coins...
-				{/* {cryptos.map((currency) => (
+	if (setCryptos)
+		return (
+			<>
+				{!simplified && (
+					<div className='search-crypto'>
+						<input
+							placeholder='Search Cryptocurrency'
+							onChange={(e) => setSearchTerm(e.target.value)}
+						/>
+					</div>
+				)}
+				<Row gutters={[32, 32]} className='crypto-card-container'>
+					SORRY Coins unavailable right now..
+					{/* {cryptos.map((currency) => (
 					<Col xs={24} sm={12} lg={6} className='crypto-card' key={currency.id}>
 						<Link key={currency.uuid} to={`/crypto/${currency.uuid}`}>
 							<Card
@@ -48,9 +51,9 @@ const Cryptocurrencies = ({ simplified }) => {
 						</Link>
 					</Col>
 				))} */}
-			</Row>
-		</>
-	);
+				</Row>
+			</>
+		);
 };
 
 export default Cryptocurrencies;
