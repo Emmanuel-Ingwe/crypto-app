@@ -13,24 +13,20 @@ const { Text, Title } = Typography;
 const { Option } = Select;
 
 const News = ({ simplified }) => {
-	const [newsCategory, setNewsCategory] = useState("Cryptocurrency");
+	const [newsCategory, setNewsCategory, isFetching] =
+		useState("Cryptocurrency");
 	const { data } = useGetCryptosQuery(100);
 	const { data: cryptoNews } = useGetCryptoNewsQuery({
 		newsCategory,
 		count: simplified ? 6 : 12,
 	});
 
-	useEffect(() => {
-		setTimeout(() => {
-			News(); // count is 0 here
-		}, 3000);
-	}, []);
-
 	if (!cryptoNews?.value) return <Loader />;
 
 	return (
 		<Row gutter={[24, 24]}>
-			{!simplified && (
+			News Loading Just a sec.....
+			{/* {!simplified && (
 				<Col span={24}>
 					<Select
 						showSearch
@@ -86,7 +82,7 @@ const News = ({ simplified }) => {
 						</a>
 					</Card>
 				</Col>
-			))}
+			))} */}
 		</Row>
 	);
 };
