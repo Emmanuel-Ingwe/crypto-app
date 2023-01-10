@@ -11,13 +11,10 @@ const Cryptocurrencies = () => {
 
 	console.log(cryptos);
 
-	if (isFetching) return "Loading";
-	if (setCryptos) return "Images";
-
 	return (
 		<>
 			<Row gutters={[32, 32]} className='crypto-card-container'>
-				{cryptos.map((currency) => (
+				{/* {cryptos.map((currency) => (
 					<Col xs={24} sm={12} lg={6} className='crypto-card' key={currency.id}>
 						<Link key={currency.uuid} to={`/crypto/${currency.uuid}`}>
 							<Card
@@ -31,7 +28,7 @@ const Cryptocurrencies = () => {
 							</Card>
 						</Link>
 					</Col>
-				))}
+				))} */}
 			</Row>
 		</>
 	);
