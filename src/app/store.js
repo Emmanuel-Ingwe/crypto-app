@@ -9,8 +9,5 @@ export default configureStore({
     },
 
     middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware().concat(cryptoApi.middleware),
-
-    middlewaree: (getDefaultMiddleware) =>
-        getDefaultMiddleware().concat(cryptoNewsApi.middleware),
+        getDefaultMiddleware().concat(cryptoNewsApi.middleware, cryptoApi.middleware)
 });
