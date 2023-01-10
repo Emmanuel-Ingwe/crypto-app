@@ -35,7 +35,8 @@ const Cryptocurrencies = ({ simplified }) => {
 					</div>
 				)}
 				<Row gutters={[32, 32]} className='crypto-card-container'>
-					SORRY Coins unavailable right now..
+					SORRY Coins unavailable right now.. <br />
+					Due to the Api rendering issues.
 					{/* {cryptos.map((currency) => (
 					<Col xs={24} sm={12} lg={6} className='crypto-card' key={currency.id}>
 						<Link key={currency.uuid} to={`/crypto/${currency.uuid}`}>
